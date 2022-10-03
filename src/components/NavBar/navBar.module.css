@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    width:75%;
+    background-color: #0ea5e9;
+    padding: 1rem;
+    border-radius: 200px 10px 100px 10px;
+}

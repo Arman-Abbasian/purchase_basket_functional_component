@@ -1,0 +1,51 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    align-items: center;
+    background-color: #0ea5e9;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+}
+.imageContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 7rem;
+    width: 7rem;
+    display: block;
+}
+.productDatails{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:flex-start;
+}
+.imgAndDescriptionSection{
+    display: flex;
+}
+.productNumber{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.descSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+.button{
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color:#1e293b ;
+}
