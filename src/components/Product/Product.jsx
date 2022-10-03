@@ -6,7 +6,7 @@ const Product = ({productName,carName,productNumber,productPrice,productImage,on
         <div className={styles.container}>
             <div className={styles.imgAndDescriptionSection}>
                 <div className={styles.imageContainer}>
-                    <img src={{productImage}} alt={productImage} />
+                    <img src={productImage} alt="image" />
                 </div>
                 <div className={styles.productDatails}>
                     <div>
@@ -23,7 +23,7 @@ const Product = ({productName,carName,productNumber,productPrice,productImage,on
                 </div>
             </div>
             <div className={styles.productNumber}>
-                <p onClick={onMinus} className={`${styles.decrement} ${styles.button}`}>< AiOutlineMinus/></p>
+                <p onClick={onMinus} className={`${styles.decrement} ${styles.button}`}>{productNumber===1 ? <AiOutlineDelete /> :< AiOutlineMinus/>}</p>
                 <p>{productNumber}</p>
                 <p onClick={onAdd} className={`${styles.increment} ${styles.button}`}>< AiOutlinePlus/></p>
             </div>

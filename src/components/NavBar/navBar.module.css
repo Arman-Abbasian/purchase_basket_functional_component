@@ -4,6 +4,9 @@
     align-items: center;
 }
 .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width:75%;
     background-color: #0ea5e9;
     padding: 1rem;

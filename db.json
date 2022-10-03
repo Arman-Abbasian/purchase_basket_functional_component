@@ -4,37 +4,33 @@
       "id": 1,
       "productName": "cover 206",
       "carName": "peugeot 206",
-      "productNumber": 1,
+      "productNumber": 6,
       "productPrice": "45 $",
-      "productImage": "cover206"
-
+      "productImage": "/images/206.webp"
     },
     {
       "id": 2,
       "productName": "cover 405",
       "carName": "peugeot 405",
-      "productNumber": 1,
+      "productNumber": 6,
       "productPrice": "38 $",
-      "productImage": "cover405"
-
+      "productImage": "images/405-Jc.webp"
     },
     {
       "id": 3,
       "productName": "cover tiba",
       "carName": "tiba",
-      "productNumber": 1,
+      "productNumber": 2,
       "productPrice": "25 $",
-      "productImage": "coverTiba"
-
+      "productImage": "/images/tiba.webp"
     },
     {
       "id": 4,
       "productName": "cover pride",
       "carName": "pride",
-      "productNumber": 1,
+      "productNumber": 3,
       "productPrice": "15 $",
-      "productImage": "coverPride"
-
+      "productImage": "/images/prid-pc.webp"
     },
     {
       "id": 5,
@@ -42,9 +38,7 @@
       "carName": "peykan",
       "productNumber": 1,
       "productPrice": "9 $",
-      "productImage": "coverPeykan"
-
+      "productImage": "/images/peykan.webp"
     }
   ]
- 
 }

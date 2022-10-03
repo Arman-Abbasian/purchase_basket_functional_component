@@ -5,12 +5,10 @@ import Home from './components/Home';
 import NavBar from './components/NavBar/NavBar';
 import Product from './components/Product/Product';
 import ProductList from './components/ProductList/ProductList';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { successNotify } from './components/toastify';
 
-import cover206 from './images/206.webp';
-import coverPeykan from './images/peykan.webp';
-import coverPride from './images/prid-pc.webp';
-import coverTiba from './images/tiba.webp';
-import coverXU from './images/XU-..webp';
 
 function App() {
   const[products,setProducts]=useState(null);
@@ -23,27 +21,56 @@ function App() {
       setProducts(res.data);
       console.log(res.data)
     })
-    .catch(err=>console.log(err))
+    .catch(err=>toast.error(err.message))
   },[])
 const decrementHandler=(id)=>{
   const findedProduct=products.find(item=>item.id===id);
   if(findedProduct.productNumber===1){
     axios.delete(`http://localhost:4000/products/${id}`)
-    .then()
-    .catch(err)
+    .then(res=>{
+      toast.success("the product removed successfully")
+      axios.get(`http://localhost:4000/products`)
+      .then(res=>setProducts(res.data))
+    })
+    .catch(err=>toast.error(err.message))
   }else{
     findedProduct.productNumber--;
-    //axios.put("http://localhost:4000/products",{findedProduct})
+    axios.put(`http://localhost:4000/products/${id}`,findedProduct)
+    .then(res=>{
+      axios.get(`http://localhost:4000/products`)
+      .then(res=>setProducts(res.data))
+    })
+    .catch(err=>toast.error(err.message))
   }
 };
 const incrementHandler=(id)=>{
-  console.log(id)
+  const findedProduct=products.find(item=>item.id===id);
+  findedProduct.productNumber++;
+  console.log(findedProduct)
+  axios.put(`http://localhost:4000/products/${id}`,findedProduct)
+  .then(res=>{
+    axios.get(`http://localhost:4000/products`)
+    .then(res=>setProducts(res.data))
+  })
+  .catch(err=>toast.error(err.message))
 };
 const removeHandler=(id)=>{
-  console.log(id)
+  const findedProduct=products.find(item=>item.id===id);
+  axios.delete(`http://localhost:4000/products/${id}`,findedProduct)
+  .then(res=>{
+    toast.success("the product removed successfully")
+    axios.get(`http://localhost:4000/products`)
+    .then(res=>setProducts(res.data))
+  })
+  .catch(err=>toast.error(err.message))
+
+
+  toast.success("the product deleted successfully")
 }
   return (
+    
     <div className="App">
+      <ToastContainer />
       {loading ? <p className={styles.loading}>loading ...</p>
       :
       products.length===0?<p>no product in basket</p>
