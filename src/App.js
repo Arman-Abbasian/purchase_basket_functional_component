@@ -1,13 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
-import Home from './components/Home';
+import Home from './pages/Home/Home';
 import NavBar from './components/NavBar/NavBar';
 import Product from './components/Product/Product';
 import ProductList from './components/ProductList/ProductList';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { successNotify } from './components/toastify';
+import { Route, Routes } from 'react-router-dom';
 
 
 function App() {
@@ -70,7 +71,7 @@ const removeHandler=(id)=>{
   return (
     
     <div className="App">
-      <ToastContainer />
+      {/* <ToastContainer />
       {loading ? <p className={styles.loading}>loading ...</p>
       :
       products.length===0?<p>no product in basket</p>
@@ -81,7 +82,11 @@ const removeHandler=(id)=>{
         onAdd={incrementHandler} onMinus={decrementHandler} onRemove={removeHandler} />
       </div>
       
-      }
+      } */}
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
     </div>
   );
 }
