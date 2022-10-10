@@ -9,11 +9,15 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { successNotify } from './components/toastify';
 import { Route, Routes } from 'react-router-dom';
+import Products from './pages/Products/Products';
+import Layout from './Layout/Layout';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 
 
 function App() {
   const[products,setProducts]=useState(null);
   const [loading,setLoading]=useState(true);
+  const [purchasedProducts,setPurchasedProducts]=useState(null);
 
   useEffect(()=>{
     axios.get("http://localhost:4000/products")
@@ -23,7 +27,8 @@ function App() {
       console.log(res.data)
     })
     .catch(err=>toast.error(err.message))
-  },[])
+  },[]);
+
 const decrementHandler=(id)=>{
   const findedProduct=products.find(item=>item.id===id);
   if(findedProduct.productNumber===1){
@@ -83,10 +88,16 @@ const removeHandler=(id)=>{
       </div>
       
       } */}
-
-      <Routes>
-        <Route path='/' element={<Home />} />
-      </Routes>
+      <Layout>
+      {products && 
+        <Routes>  
+          <Route path='/' element={<Home />} />
+          <Route path='/products' element={<Products products={products} />} />
+          <Route path='/products/:id' element={<ProductDetails />} />
+        </Routes>
+         }
+        
+      </Layout>
     </div>
   );
 }
