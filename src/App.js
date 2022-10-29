@@ -12,6 +12,7 @@ import { Route, Routes } from 'react-router-dom';
 import Products from './pages/Products/Products';
 import Layout from './Layout/Layout';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import PurchaseBasket from './pages/PurchaseBasket/PurchaseBasket';
 
 
 function App() {
@@ -28,6 +29,10 @@ function App() {
     })
     .catch(err=>toast.error(err.message))
   },[]);
+
+  const addToPurchcaseBasketHandler=(productData)=>{
+    console.log(productData)
+  }
 
 const decrementHandler=(id)=>{
   const findedProduct=products.find(item=>item.id===id);
@@ -93,7 +98,8 @@ const removeHandler=(id)=>{
         <Routes>  
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<Products products={products} />} />
-          <Route path='/products/:id' element={<ProductDetails />} />
+          <Route path='/products/:id' element={<ProductDetails addToPurchcaseBasketHandler={addToPurchcaseBasketHandler} />} />
+          <Route path='/purchaseBasket' element={<PurchaseBasket />} />
         </Routes>
          }
         

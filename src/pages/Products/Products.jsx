@@ -11,7 +11,7 @@ const Products = ({products}) => {
             {
         products.map(item=>{
             return <div key={item.id} className="flex border-2 border-slate-800 rounded-md  relative h-56 drop-shadow-lg">
-        <div className="flex-1 p-2 w-full h-full bg-slate-800 flex justify-center items-center"><img src={item.productImage} alt="si"/></div>
+        <div className="flex-1 p-2 w-full h-full bg-slate-800 flex justify-center items-center"><img src={item.productImage} alt="sisako"/></div>
             <div className="flex-1 flex flex-col  justify-between gap-8 p-2">
                 <div className="flex flex-col justify-between">
                     <h2 className="text-xl font-bold">{item.productName}</h2>

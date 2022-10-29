@@ -5,9 +5,9 @@ import logo from '../../images/logo.png';
 
 
 const links=[
-    {id:1,to:"/",name:"home",icon:<FaHome className="w-10 h-10" />},
-    {id:2,to:"/products",name:"products",icon:<AiFillShop className="w-10 h-10" />},
-    {id:3,to:"/purchaseBasket",name:"purchaseBasket",icon:<FaShoppingCart className="w-10 h-10" />}
+    {id:1,to:"/",name:"home",icon:<FaHome className="w-10 h-10 text-blue-800" />},
+    {id:2,to:"/products",name:"products",icon:<AiFillShop className="w-10 h-10 text-blue-800" />},
+    {id:3,to:"/purchaseBasket",name:"purchaseBasket",icon:<FaShoppingCart className="w-10 h-10 text-blue-800" />}
 ]
 
 
